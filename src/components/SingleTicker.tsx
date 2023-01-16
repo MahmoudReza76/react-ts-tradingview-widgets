@@ -11,10 +11,7 @@ export type SingleTickerProps = {
   isTransparent?: boolean;
   locale?: Locales;
   largeChartUrl?: string;
-
   children?: never;
-
-  copyrightStyles?: CopyrightStyles;
 };
 
 const SingleTicker: React.FC<SingleTickerProps> = ({
@@ -25,8 +22,7 @@ const SingleTicker: React.FC<SingleTickerProps> = ({
   isTransparent = false,
   locale = "en",
   largeChartUrl = undefined,
-  copyrightStyles,
-  ...props
+
 }) => {
   return (
     <div id="tradingview_widget_wrapper">
@@ -42,11 +38,6 @@ const SingleTicker: React.FC<SingleTickerProps> = ({
         }}
         scriptSRC="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js"
       ></Widget>
-      <Copyright
-        copyrightStyles={copyrightStyles}
-        href={`https://www.tradingview.com/symbols/${symbol}/`}
-        spanText={`${symbol} Rates`}
-      />
     </div>
   );
 };
